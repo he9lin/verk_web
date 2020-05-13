@@ -51,20 +51,20 @@ defmodule VerkWeb.Mixfile do
 
   defp deps do
     [
-      {:phoenix, "~> 1.4.0"},
-      {:phoenix_pubsub, "~> 1.0"},
-      {:phoenix_html, "~> 2.6"},
+      {:phoenix, "~> 1.5.0"},
+      {:phoenix_pubsub, "~> 2.0"},
+      {:phoenix_html, "~> 2.11"},
       {:gettext, "~> 0.16"},
       {:verk, "~> 1.1"},
-      {:plug_cowboy, "~> 2.0"},
+      {:plug_cowboy, "~> 2.1"},
       {:plug, "~> 1.7"},
       {:basic_auth, "~> 2.0"},
-      {:phoenix_live_reload, "~> 1.0", only: :dev},
+      {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:earmark, "~> 1.0", only: :dev},
       {:ex_doc, "~> 0.13", only: :dev},
       {:coverex, "~> 1.4", only: :test},
       {:meck, "~> 0.8", only: :test},
-      {:timex, "~> 3.3.0"},
+      {:timex, "~> 3.5"},
       {:jason, "~> 1.1"}
     ]
   end
