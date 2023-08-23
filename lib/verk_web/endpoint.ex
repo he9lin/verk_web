@@ -40,10 +40,14 @@ defmodule VerkWeb.Endpoint do
     table: :verk_web_session
   )
 
-  auth_options = Application.get_env(:verk_web, :authorization)
+  auth_options = Application.compile_env(:verk_web, :authorization)
 
   if auth_options do
-    plug(BasicAuth, use_config: {:verk_web, :authorization})
+    plug(:basic_auth, auth_options)
+  end
+
+  def basic_auth(conn, opts) do
+    Plug.BasicAuth.basic_auth(conn, opts)
   end
 
   plug(VerkWeb.Router)
