@@ -11,7 +11,7 @@ defmodule VerkWeb.Mixfile do
       version: "1.5.1",
       elixir: "~> 1.11",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: [:phoenix, :gettext] ++ Mix.compilers(),
+      compilers: [:phoenix] ++ Mix.compilers(),
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       test_coverage: [tool: Coverex.Task, coveralls: true],
@@ -37,18 +37,20 @@ defmodule VerkWeb.Mixfile do
       {:phoenix, "~> 1.5.0"},
       {:phoenix_pubsub, "~> 2.0"},
       {:phoenix_html, "~> 2.11"},
-      {:gettext, "~> 0.16"},
-      {:verk, "~> 1.1"},
-      {:plug_cowboy, "~> 2.1"},
-      {:plug, "~> 1.7"},
+
       {:basic_auth, "~> 2.0"},
+      {:gettext, "~> 0.16"},
+      {:hackney, "~> 1.18.1"},
+      {:plug_cowboy, "~> 2.0"},
+      {:plug, "~> 1.13"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:earmark, "~> 1.0", only: :dev},
       {:ex_doc, "~> 0.13", only: :dev},
       {:coverex, "~> 1.4", only: :test},
       {:meck, "~> 0.8", only: :test},
       {:timex, "~> 3.5"},
-      {:jason, "~> 1.1"}
+      {:jason, "~> 1.1"},
+      {:verk, github: "he9lin/verk", ref: "485b579"}
     ]
   end
 
