@@ -9,7 +9,7 @@ defmodule VerkWeb.Mixfile do
     [
       app: :verk_web,
       version: "1.5.1",
-      elixir: "~> 1.6",
+      elixir: "~> 1.11",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       build_embedded: Mix.env() == :prod,
@@ -22,27 +22,10 @@ defmodule VerkWeb.Mixfile do
     ]
   end
 
-  @default_config [
-    http: [port: 4000],
-    server: false,
-    pubsub: [name: VerkWeb.PubSub, adapter: Phoenix.PubSub.PG2]
-  ]
-
   def application do
     [
       mod: {VerkWeb, []},
-      env: [{VerkWeb.Endpoint, @default_config}],
-      applications: [
-        :phoenix,
-        :phoenix_pubsub,
-        :phoenix_html,
-        :cowboy,
-        :logger,
-        :gettext,
-        :verk,
-        :timex,
-        :basic_auth
-      ]
+      extra_applications: [:logger]
     ]
   end
 
